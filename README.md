@@ -50,3 +50,27 @@ Deploying a Linux web server on AWS EC2, breaking the service intentionally, dia
 - **Cause:** Apache (`httpd`) service was stopped, so the EC2 instance was up but not serving HTTP.
 - **Fix:** Restarted the service and enabled it to start automatically on boot.
 - **Prevention ideas:** CloudWatch alarms for stopped services, periodic health checks, and systemd auto-restart options.
+
+---
+
+## Screenshots
+
+### EC2 instance and networking
+![EC2 instance details](screenshots/01-ec2-instance-detalis.png)
+![Security group inbound rules](screenshots/02-security-group-inboud-rules.png)
+![Key pair details](screenshots/03-keypair-details.png)
+
+### SSH and web server setup
+![SSH connection to EC2](screenshots/04-ssh-connection.png)
+![Apache installation and service](screenshots/05-apache-installation.png)
+![index.html created](screenshots/06-index-html-created.png)
+
+### Outage simulation and troubleshooting
+![Website working](screenshots/07-website-working.png)
+![Website broken after stopping Apache](screenshots/08-website-broken.png)
+![systemctl showing httpd stopped](screenshots/09-systemctl-status-stopped.png)
+![Apache error log inspection](screenshots/10-apache-error-log.png)
+
+### Service restored
+![systemctl showing httpd active/running](screenshots/11-systemctl-status-running.png)
+
